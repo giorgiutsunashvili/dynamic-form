@@ -1,0 +1,44 @@
+<form FormGroup="workexp">
+    <article FormGroupArray="jobs">
+        <button (click)="addjob()" class="col-md-6 d-block btn btn-success">add job</button>
+        <div *ngFor="let jobitem of getjobsgroup().controls;let jobindex=index">
+             <div FormGroupName="jobindex" class="jobarea">
+                 <div class="form-group">
+                     <label for="">Enter Here</label>
+                     <input type="text" name="companyname" class="form-control" placeholder="Enter Here">
+                 </div>
+                 <div class="form-group">
+                     <label for="">Enter Here</label>
+                     <input type="text" name="description" class="form-control" placeholder="Enter Here">
+                 </div>
+                 <div formarrayname="positions">
+                    <button (click)="addposition" class="col-md-6 d-block btn btn-success"></button>
+                     <div *ngFor="let positionitem of getposition(jobindex).controls">
+                         <div Formgroupname="positionindex">
+                             <div class="form-group">
+                                 <label for="">Enter Here</label>
+                                 <input type="text" name="positionlevel" placeholder="Enter Here" class="form-control" >
+                             </div>
+                             <div class="form-group">
+                                 <label for="">Enter Here</label>
+                                 <textarea name="description" class="form-control" ></textarea>
+                             </div>
+                             <div class="class d-flex justify-content-between">
+                                 <div class="form-group col-md-5">
+                                     <label for="">Enter Here</label>
+                                     <input type="date" name="start" placeholder="Enter Here" class="form-control" >
+                                 </div>
+                                 <div class="form-group col-md-5">
+                                     <label for="">Enter Here</label>
+                                     <input type="date" name="end" placeholder="Enter Here" class="form-control">
+                                 </div>
+                                <button (click)="deleteposition" class="col-md-6 d-block btn btn-dunger"></button>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </div>
+     </article>
+
+</form>
